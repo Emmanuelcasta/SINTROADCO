@@ -1,0 +1,13 @@
+/* Estilos específicos para la página de información */
+body {
+    background-color: #f7f7f7;
+}
+
+h2, h3 {
+    color: #ff0000;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+}

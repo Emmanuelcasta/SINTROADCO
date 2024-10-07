@@ -1,0 +1,22 @@
+<!-- templates/pages/galeria.html -->
+{% extends 'pages/base.html' %}
+{% load static %}
+{% block header_title %}Galería{% endblock %}
+
+
+{% block content %}
+<link href="{% static 'static/css/galeria.css' %}" rel="stylesheet" />
+
+<header>
+    <h1>Galería</h1>
+</header>
+<section>
+    <h2>Nuestras Actividades</h2>
+    <p>Fotos de eventos recientes.</p>
+    <!-- Aquí podrías agregar algunas imágenes de ejemplo -->
+    <div class="galeria">
+        <img src="/static/img/evento1.jpg" alt="Evento 1">
+        <img src="/static/img/evento2.jpg" alt="Evento 2">
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,126 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+<link href="{% static 'static/css/informacion.css' %}" rel="stylesheet" />
+
+{% block title %}Información{% endblock %}
+
+{% block header_title %}Información del Sindicato{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h2>Bonificaciones y Beneficios</h2>
+
+    <div class="accordion">
+        <h3 class="accordion-title">Bonificación para el Personal de Almacén</h3>
+        <div class="accordion-content">
+            <p>Los trabajadores asignados al área de almacén que ocupen los siguientes cargos podrán recibir una bonificación trimestral salarial equivalente a ciento cincuenta mil pesos ($150.000). Los cargos beneficiarios serán:</p>
+            <ul>
+                <li>Operario de almacén</li>
+                <li>Gestor de aseguramiento y logística</li>
+                <li>Auxiliar de bodega</li>
+                <li>Controladores</li>
+            </ul>
+        </div>
+
+        <h3 class="accordion-title">Auxilio por Maternidad</h3>
+        <div class="accordion-content">
+            <p>La EMPRESA reconocerá el equivalente al setenta y cinco por ciento (75%) de un (1) salario mínimo legal mensual vigente como auxilio de maternidad a las trabajadoras afiliadas a SINTROADCO. En caso de aborto involuntario deberá la EMPRESA otorgar el auxilio de que trata esta cláusula.</p>
+        </div>
+
+        <h3 class="accordion-title">Auxilio por Paternidad</h3>
+        <div class="accordion-content">
+            <p>La EMPRESA reconocerá el equivalente al setenta y cinco por ciento (75%) de un (1) salario mínimo legal mensual vigente como auxilio de paternidad a los trabajadores afiliados a SINTROADCO.</p>
+        </div>
+
+        <h3 class="accordion-title">Bonificación para Analistas de Seguridad</h3>
+        <div class="accordion-content">
+            <p>La EMPRESA reconocerá una bonificación salarial para los analistas de seguridad que se encuentren en operaciones de riesgo a nivel nacional equivalente a ciento cincuenta mil pesos ($150.000).</p>
+        </div>
+
+        <h3 class="accordion-title">Permisos Sindicales</h3>
+        <div class="accordion-content">
+            <p>La EMPRESA reconocerá hasta ocho (8) permisos sindicales remunerados para que los directivos sindicales puedan atender los eventos programados por la Organización Sindical a nivel local o nacional.</p>
+        </div>
+
+        <h3 class="accordion-title">Ayudas Escolares</h3>
+        <div class="accordion-content">
+            <p>La EMPRESA reconocerá para cada año lectivo la entrega de un bono escolar para todos los hijos de trabajadores sindicalizados entre los tres (3) y los dieciocho (18) años, de acuerdo con los siguientes montos:</p>
+            <ul>
+                <li>Setenta mil pesos ($70.000) para preescolar y primaria.</li>
+                <li>Ciento veinte mil pesos ($120.000) para secundaria.</li>
+            </ul>
+        </div>
+
+        <h3 class="accordion-title">Acompañamiento Sindical</h3>
+        <div class="accordion-content">
+            <p>Todos nuestros afiliados tienen derecho al acompañamiento sindical en procesos disciplinarios. Para más información o asesoría jurídica, puede comunicarse con los siguientes representantes sindicales:</p>
+            <ul>
+                <li>Jorge Guzmán - Presidente Nacional Sintroadco - Cel: 300-331-71-66</li>
+                <li>Francisco Guerra - Tesorero Nacional Sintroadco - Cel: 310-825-57-40</li>
+                <li>Edwin Castañeda - Sintroadco - Cel: 305-264-32-41</li>
+                <li>Wilson Berrio - Sintroadco - Cel: 301-460-79-78</li>
+                <li>Anderson Rojas - Presidente Subdirectiva Eje Cafetero - Cel: 316-574-22-67</li>
+                <li>Víctor Vergel - Presidente Subdirectiva Antioquia Norte - Cel: 301-404-68-61</li>
+            </ul>
+        </div>
+
+        <h3 class="accordion-title">Bono por Retiro Voluntario</h3>
+        <div class="accordion-content">
+            <p>La EMPRESA otorgará un bono equivalente al dos por ciento (2%) del salario básico mensual de los trabajadores que voluntariamente se retiren de la empresa, siempre que hayan estado afiliados a la Organización Sindical por más de cinco (5) años.</p>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript para manejar el acordeón -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var accordions = document.getElementsByClassName("accordion-title");
+        for (var i = 0; i < accordions.length; i++) {
+            accordions[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                } else {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                }
+            });
+        }
+    });
+</script>
+
+<style>
+    /* Justifica el texto */
+    .accordion-content {
+        text-align: justify;
+        padding: 0 18px;
+        background-color: white;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height 0.2s ease-out;
+    }
+
+    /* Estilo del título de las secciones */
+    .accordion-title {
+        cursor: pointer;
+        padding: 18px;
+        background-color: #eee;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: background-color 0.2s;
+    }
+
+    .accordion-title:hover {
+        background-color: #ccc;
+    }
+
+    /* Estilo cuando el acordeón está activo */
+    .accordion-title.active {
+        background-color: #ccc;
+    }
+</style>
+
+{% endblock %}
