@@ -5,16 +5,16 @@ from django.views.generic import TemplateView
 from django.contrib import messages
 
 class HomePageView(TemplateView):
-    template_name = "Templates/pages/inicio.html"
+    template_name = "templates/pages/inicio.html"
 
 class GaleriaPageView(TemplateView):  # Cambiar a CamelCase
-    template_name = "Templates/pages/galeria.html"
+    template_name = "templates/pages/galeria.html"
 
 class InformacionPageView(TemplateView):  # Cambiar a CamelCase
-    template_name = "Templates/pages/informacion.html"
+    template_name = "templates/pages/informacion.html"
 
 class ContactoPageView(TemplateView):
-    template_name = "Templates/pages/contacto.html"
+    template_name = "templates/pages/contacto.html"
 
     def post(self, request, *args, **kwargs):
         nombre = request.POST.get('nombre')
