@@ -56,7 +56,7 @@ ROOT_URLCONF = 'SINTRO.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'Templates'],  # Asegúrate de que esta ruta sea correcta
+        'DIRS': [BASE_DIR / 'pages' / 'Templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
