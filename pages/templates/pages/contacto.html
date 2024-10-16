@@ -1,0 +1,60 @@
+{% extends 'pages/base.html' %}
+{% load static %}
+<link href="{% static 'static/css/contacto.css' %}" rel="stylesheet" />
+{% block title %}Contacto{% endblock %}
+
+{% block header_title %}Contacto{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Contáctanos</h2>
+    <p>Si tienes preguntas o deseas más información, no dudes en contactarnos a través de los siguientes medios:</p>
+
+    <!-- Mensaje de éxito -->
+    {% if success_message %}
+        <div class="alert alert-success" role="alert">
+            {{ success_message }}
+        </div>
+    {% endif %}
+
+
+    <h3>Acompañamiento Sindical</h3>
+    <p>
+        Todos nuestros afiliados tienen derecho al acompañamiento sindical en procesos disciplinarios.
+    </p>
+
+    <h3>Asesoría Jurídica</h3>
+    <p>
+        Nuestros afiliados podrán tener asesorías de los directores sindicales:
+    </p>
+    <ul>
+        <li>Presidente Nacional Sintroadco: Jorge Guzmán - Cel: 300-331-71-66</li>
+        <li>Tesorero Nacional Sintroadco: Francisco Guerra - Cel: 310-825-57-40</li>
+        <li>Sintroadco: Edwin Castañeda - Cel: 305-264-32-41</li>
+        <li>Sintroadco: Wilson Berrio - Cel: 301-460-79-78</li>
+        <li>Presidente Subdirectiva Eje Cafetero: Anderson Rojas - Cel: 316-574-22-67</li>
+        <li>Presidente Subdirectiva Antioquia Norte: Víctor Vergel - Cel: 301-404-68-61</li>
+    </ul>
+
+    <h3>Horario de atención</h3>
+    <p>Lunes a Viernes: 9:00 AM - 5:00 PM</p>
+
+    <!-- Formulario de contacto -->
+    <form method="post" action="{% url 'contacto' %}">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="mb-3">
+            <label for="mensaje" class="form-label">Mensaje</label>
+            <textarea class="form-control" id="mensaje" name="mensaje" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+</div>
+{% endblock %}
