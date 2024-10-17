@@ -1,19 +1,17 @@
 {
-    "builds": [{
-      "src": "SINTRO/wsgi.py",
-      "use": "@vercel/python",
-      "config": { "maxLambdaSize": "15mb", "runtime": "python3.12.5" }
-    }],
-    "routes": [
-      {
-        "src": "/static/(.*)",
-        "dest": "/staticfiles/$1"
-
-      },
-      {
-        "src": "/(.*)",
-        "dest": "SINTRO/wsgi.py"
-      }
-    ]
-  }
-  
+  "builds": [{
+    "src": "SINTRO/wsgi.py",
+    "use": "@vercel/python",
+    "config": { "maxLambdaSize": "15mb", "runtime": "python3.12.5" }
+  }],
+  "routes": [
+    {
+      "src": "/static/(.*)",
+      "dest": "/staticfiles/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "SINTRO/wsgi.py"
+    }
+  ]
+}
